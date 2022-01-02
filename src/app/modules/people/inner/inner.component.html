@@ -1,0 +1,13 @@
+<h3><ng-content></ng-content></h3>
+
+<div class="people" *ngIf="apiData">
+  <div class="source" [ngClass]="{ 'cache-call': source == 'From Cache' }">
+    Source: {{ source }}
+  </div>
+  <div class="name">Name : {{ apiData.name }}</div>
+  <div class="skills">Skills: {{ apiData.skills }}</div>
+  <div class="empid">Emp ID: {{ apiData.empId }}</div>
+</div>
+<div class="loading" *ngIf="!apiData">
+  Loading...
+</div>

@@ -1,0 +1,17 @@
+<header class="app-header">
+  <ss-app-header></ss-app-header>
+</header>
+<div class="left-panel"
+  [ngClass]="{'left-panel-hide': hideLeftPannel}">
+  <ss-app-left-panel
+    (showHideEvent)="showHide($event)" >
+  </ss-app-left-panel>
+</div>
+<main class="main-content">
+  <router-outlet></router-outlet>
+  <router-outlet></router-outlet>
+  <router-outlet></router-outlet>
+</main>
+<footer class="app-footer">
+  <ss-app-footer></ss-app-footer>
+</footer>

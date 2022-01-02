@@ -1,0 +1,29 @@
+<div class="left-panel-wrapper">
+    <div class="hamburger-icon" (click)="showHide()">
+        <span class="menu-line"></span>
+        <span class="menu-line"></span>
+        <span class="menu-line"></span>
+    </div>
+    <ng-container *ngIf="showLeftPanel">
+        <div class="left-menu" [@openClose]>
+            <div class="hamburger-icon" (click)="showHide()">
+                <span class="menu-line"></span>
+                <span class="menu-line"></span>
+                <span class="menu-line"></span>
+            </div>
+            <div class="menu-items" >
+                <ng-container *ngFor="let item of menuItems; trackBy: itemById">
+                    <span class="menu-link">
+                        <a class="menu-links" 
+                            ssAppHighlightText
+                            [routerLink]="item.path"
+                            routerLinkActive="active"
+                            (click)="showHide()">{{item.menuText}}</a>
+                    </span>
+                </ng-container>
+            </div>
+
+        </div>
+        <div class="overlay" (click)="showHide()"></div>
+    </ng-container>
+</div>

@@ -1,0 +1,91 @@
+<!-- <p>main works!</p> -->
+<h1>Student Details Form</h1>
+<div class="student-form" @pageLoadAnimation>
+  <form [formGroup]="studentForm" (ngSubmit)="onSubmit()">
+    <!-- <div class="form-field">
+            <label class="input-label">First Name</label>
+            <input class="input-field"
+                type="text"
+                formControlName="name",
+                placeholder="Student's name"
+                >
+        </div>
+        <div class="form-field">
+            <label class="input-label">Last Name</label>
+            <input class="input-field"
+                type="text"
+                formControlName="class"
+                placeholder="Student's class"
+                >
+        </div>
+        <div class="form-field">
+            <label class="input-label" >Age</label>
+            <input class="input-field"
+                type="text"
+                formControlName="section"
+                placeholder="Student's section">
+        </div> -->
+    <div class="student-form-array" formArrayName="students" #formDiv>
+      <div *ngFor="let item of students.controls; let i = index">
+        <div [formGroupName]="i">
+          <div class="form-field">
+            <span style="text-decoration: underline"
+              >Student &nbsp; {{ i + 1 }}</span
+            >
+            <button class="delete-button" (click)="deleteStudent(i)">
+              Delete Student Form &nbsp;{{ i + 1 }}
+            </button>
+          </div>
+          <div class="form-field">
+            <label class="input-label">Name</label>
+            <input
+              class="input-field"
+              type="text"
+              formControlName="name"
+              placeholder="Student's name"
+            />
+          </div>
+          <div class="form-field">
+            <label class="input-label">Class</label>
+            <input
+              class="input-field"
+              type="number"
+              formControlName="class"
+              placeholder="Student's class"
+              maxlength="2"
+            />
+          </div>
+          <div class="form-field">
+            <label class="input-label">Section</label>
+            <input
+              class="input-field"
+              style="text-transform: capitalize"
+              type="text"
+              formControlName="section"
+              placeholder="Student's section"
+              maxlength="1"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="form-field" @pageLoadAnimation>
+      <input
+        class="submit-button"
+        type="button"
+        value="Add"
+        [disabled]="!studentForm.valid"
+        [ngClass]="{ 'button-disable': !studentForm.valid }"
+        (click)="addStudent()"
+      />
+      <input
+        class="submit-button"
+        type="submit"
+        value="Submit"
+        [disabled]="!studentForm.valid"
+        [ngClass]="{ 'button-disable': !studentForm.valid }"
+        (click)="onSubmit()"
+      />
+    </div>
+  </form>
+</div>

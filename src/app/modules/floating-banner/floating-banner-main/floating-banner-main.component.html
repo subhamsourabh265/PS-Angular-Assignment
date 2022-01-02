@@ -1,0 +1,5 @@
+<div class="floating-banner-wrapper" @pageLoadAnimation>
+  <div *ngIf="showBanner" class="banner-content" [@rotatingBanner]="state">
+    <h3>{{ bannerLabels.bannerText }}</h3>
+  </div>
+</div>

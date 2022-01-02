@@ -1,0 +1,30 @@
+<div class="ctimer-wrapper" @pageLoadAnimation>
+  <div class="countdown-display">
+    <ss-app-countdown-display
+      [timerInput]="timerInput"
+      [timerStatus]="timerStatus"
+      [resetTimer]="resetTimer"
+      [startTimer]="startTimer"
+      [setTimerValue]="setTimerValue"
+      (timerEvent)="updateTimer($event)"
+      (timerLogEvent)="logTime($event)"
+      (timerCountEvent)="countClicks($event)"
+    >
+    </ss-app-countdown-display>
+  </div>
+  <div class="timer-input">
+    <ss-app-timer-input
+      [timerValue]="timerValue"
+      (timerStatusEvent)="setTimerStatus($event)"
+    >
+    </ss-app-timer-input>
+  </div>
+  <div class="timer-logs">
+    <ss-app-timer-log [timerStatus]="timerStatus" [timeStamp]="timeStamp">
+    </ss-app-timer-log>
+  </div>
+  <div class="timer-counts">
+    <ss-app-timer-counts [startCount]="startCount" [pauseCount]="pauseCount">
+    </ss-app-timer-counts>
+  </div>
+</div>

@@ -1,0 +1,103 @@
+<h3 @pageLoadAnimation>Students Marksheet Table</h3>
+<h4 @pageLoadAnimation>
+  (Click on table heading to sort in ascending and then descending order)
+</h4>
+<div class="table-wrapper" @pageLoadAnimation>
+  <div class="table" *ngIf="dataSource && dataSource.length">
+    <div class="table-heading">
+      <div
+        class="heading-cell"
+        [ngClass]="{
+          'heading-highlighted':
+            heading === 'name' && (order === 'asc' || order === 'desc')
+        }"
+        (click)="setSortingOrder('name')"
+      >
+        Name
+      </div>
+      <div
+        class="heading-cell"
+        [ngClass]="{
+          'heading-highlighted':
+            heading === 'class' && (order === 'asc' || order === 'desc')
+        }"
+        (click)="setSortingOrder('class')"
+      >
+        Class
+      </div>
+      <div
+        class="heading-cell"
+        [ngClass]="{
+          'heading-highlighted':
+            heading === 'section' && (order === 'asc' || order === 'desc')
+        }"
+        (click)="setSortingOrder('section')"
+      >
+        Section
+      </div>
+      <div
+        class="heading-cell"
+        [ngClass]="{
+          'heading-highlighted':
+            heading === 'Maths' && (order === 'asc' || order === 'desc')
+        }"
+        (click)="setSortingOrder('Maths')"
+      >
+        Maths
+      </div>
+      <div
+        class="heading-cell"
+        [ngClass]="{
+          'heading-highlighted':
+            heading === 'Science' && (order === 'asc' || order === 'desc')
+        }"
+        (click)="setSortingOrder('Science')"
+      >
+        Science
+      </div>
+      <div
+        class="heading-cell"
+        [ngClass]="{
+          'heading-highlighted':
+            heading === 'English' && (order === 'asc' || order === 'desc')
+        }"
+        (click)="setSortingOrder('English')"
+      >
+        English
+      </div>
+    </div>
+    <div class="table-data">
+      <ng-container
+        *ngFor="
+          let data of dataSource | sortTable: order:heading:initialData;
+          trackBy: itemById
+        "
+      >
+        <div class="table-row">
+          <div class="table-column">
+            {{ data.name }}
+          </div>
+          <div class="table-column">
+            {{ data.class }}
+          </div>
+          <div class="table-column">
+            {{ data.section }}
+          </div>
+          <div class="table-column">
+            {{ data.Maths }}
+          </div>
+          <div class="table-column">
+            {{ data.Science }}
+          </div>
+          <div class="table-column">
+            {{ data.English }}
+          </div>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+
+  <div class="loading" *ngIf="!(dataSource && dataSource.length)">
+    Loading...
+  </div>
+</div>

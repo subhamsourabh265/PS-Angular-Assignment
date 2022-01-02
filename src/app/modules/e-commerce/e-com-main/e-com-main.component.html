@@ -1,0 +1,61 @@
+<div class="select-filter" @pageLoadAnimation>
+  <div class="switch-button" @pageLoadAnimation>
+    <input
+      type="button"
+      id="switchbtn"
+      name="switchbtn"
+      value="{{ viewChangeText }}"
+      class="switch-btn"
+      (click)="changeView()"
+    />
+  </div>
+  <div class="filter-dropdown" @pageLoadAnimation>
+    <select
+      [(ngModel)]="selectedFilter"
+      (ngModelChange)="applyFilter(selectedFilter)"
+      class="filter-price"
+      name="price"
+      id="price"
+    >
+      <option value="select">select...</option>
+      <option
+        *ngFor="let item of filterOptions; trackBy: itemById"
+        value="{{ item | json }}"
+      >
+        {{ item.optionText }}
+      </option>
+    </select>
+  </div>
+</div>
+<div class="ecom-page" *ngIf="productSource" @pageLoadAnimation>
+  <div class="product-grid" *ngIf="viewType === 'grid'" @pageLoadAnimation>
+    <ng-container
+      *ngFor="
+        let item of productSource | filterPipe: lowerLimit:upperLimit;
+        trackBy: itemById
+      "
+    >
+      <div class="product-details">
+        <div class="product-name">{{ item.name }}</div>
+        <div class="product-price">Rs. {{ item.price }}</div>
+        <div class="product-discount">{{ item.discount }} % off</div>
+      </div>
+    </ng-container>
+  </div>
+  <div class="product-list" *ngIf="viewType === 'list'" @pageLoadAnimation>
+    <ng-container
+      *ngFor="
+        let item of productSource | filterPipe: lowerLimit:upperLimit;
+        trackBy: itemById
+      "
+    >
+      <div class="product-list-details">
+        <div class="product-list-name">{{ item.name }}</div>
+        <div class="product-list-price">Rs. &nbsp;{{ item.price }}</div>
+        <div class="product-list-discount">{{ item.discount }} % off</div>
+      </div>
+    </ng-container>
+  </div>
+</div>
+
+<div class="loading" *ngIf="!productSource">Loading...</div>

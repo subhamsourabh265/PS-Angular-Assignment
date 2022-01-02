@@ -1,0 +1,25 @@
+<div
+  (scroll)="onScroll()"
+  class="dynamic-div-wrapper"
+  #scrollDiv
+  @pageLoadAnimation
+>
+  <ng-container
+    *ngFor="let item of dynamicBoxes; index as i; trackBy: itemById"
+  >
+    <div [@.disabled]="!isAnimate" class="dynamic-div" [@pageLoadAnimation]>
+      <input
+        type="button"
+        id="div{{ i }}"
+        name="div{{ i }}"
+        class="box-button"
+        value="Box-{{ i + 1 }}"
+        (click)="showAlertBox(i + 1)"
+      />
+    </div>
+  </ng-container>
+</div>
+
+<ss-app-alert-box *ngIf="showAlert" (closeAlertBox)="showAlert = false">
+  Button in {{ clickedDiv }} DIV clicked
+</ss-app-alert-box>

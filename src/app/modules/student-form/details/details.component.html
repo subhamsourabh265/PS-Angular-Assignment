@@ -1,0 +1,39 @@
+<h1>Student Details</h1>
+<div class="form-wrapper" @pageLoadAnimation>
+  <div class="form-table" (scroll)="onScroll()" #formTable>
+    <div class="row-heading" [ngClass]="{ 'row-heading-scroll': scrolling }">
+      <div class="col-heading">Form No</div>
+      <div class="col-heading">Name</div>
+      <div class="col-heading">Class</div>
+      <div class="col-heading">Section</div>
+    </div>
+    <ng-container *ngFor="let stu of formDetails; let i = index">
+      <div
+        class="row-data"
+        [ngClass]="{ 'row-data-scroll': scrolling && i == 0 }"
+      >
+        <div class="col-data">{{ i + 1 }}</div>
+        <div class="col-data">{{ stu.name }}</div>
+        <div class="col-data">{{ stu.class }}</div>
+        <div class="col-data">{{ stu.section | uppercase }}</div>
+      </div>
+      <!-- <div class="stu-heading">Student {{ i + 1 }}</div> -->
+      <!-- <div class="form-details">
+        <div class="form-label">Name</div>
+        <div class="form-data">{{ stu.name }}</div>
+      </div>
+      <div class="form-details">
+        <div class="form-label">Class</div>
+        <div class="form-data">{{ stu.class }}</div>
+      </div>
+      <div class="form-details">
+        <div class="form-label">Section</div>
+        <div class="form-data">{{ stu.section }}</div>
+      </div> -->
+    </ng-container>
+  </div>
+</div>
+
+<div class="buttons">
+  <input class="back-button" type="button" value="Back" (click)="backClick()" />
+</div>

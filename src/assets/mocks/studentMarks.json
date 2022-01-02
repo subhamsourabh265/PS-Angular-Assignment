@@ -1,0 +1,100 @@
+{
+    "data": [
+        {
+            "name": "Naitik",
+            "class": 5,
+            "section": "A",
+            "Maths": 99,
+            "Science": 91,
+            "English": 81
+        },
+        {
+            "name": "Raj",
+            "class": 3,
+            "section": "D",
+            "Maths": 55,
+            "Science": 62,
+            "English": 51
+        },
+        {
+            "name": "Subham",
+            "class": 10,
+            "section": "A",
+            "Maths": 100,
+            "Science": 99,
+            "English": 89
+        },
+        {
+            "name": "Sourabh",
+            "class": 9,
+            "section": "B",
+            "Maths": 83,
+            "Science": 80,
+            "English": 75
+        },
+        {
+            "name": "Janmenjaya",
+            "class": 4,
+            "section": "E",
+            "Maths": 45,
+            "Science": 50,
+            "English": 41
+        },
+        {
+            "name": "Ashish",
+            "class": 2,
+            "section": "C",
+            "Maths": 71,
+            "Science": 78,
+            "English": 68
+        },
+        {
+            "name": "Ashok",
+            "class": 9,
+            "section": "F",
+            "Maths": 30,
+            "Science": 25,
+            "English": 31
+        },
+        {
+            "name": "Golu",
+            "class": 8,
+            "section": "A",
+            "Maths": 100,
+            "Science": 99,
+            "English": 95
+        },
+        {
+            "name": "Shubhash",
+            "class": 6,
+            "section": "C",
+            "Maths": 76,
+            "Science": 71,
+            "English": 68
+        },
+        {
+            "name": "Omi",
+            "class": 4,
+            "section": "A",
+            "Maths": 92,
+            "Science": 93,
+            "English": 86
+        },
+        {
+            "name": "Mahi",
+            "class": 1,
+            "section": "B",
+            "Maths": 94,
+            "Science": 96,
+            "English": 97
+        },
+        {
+            "name": "Tanmay",
+            "class": 7,
+            "section": "E",
+            "Maths": 39,
+            "Science": 38,
+            "English": 41
+        }
+    ]
+}

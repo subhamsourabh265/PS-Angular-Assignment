@@ -1,0 +1,55 @@
+.table-wrapper {
+    width: 100%;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    margin-top: 30px;
+    
+    .table {
+        width: 90vw;
+        .table-heading {
+            display: flex;
+            height: 47px;
+            background: #c6dade;
+            font-weight: 600;
+            .heading-cell {
+                border: 1px solid #440606;
+                flex: 1;
+                border-radius: 4px;
+                cursor: pointer;
+                padding-top: 13px;
+                &.heading-highlighted {
+                    background: #6e0fce;
+                    color: #fff;
+                    border: 2px solid #060200;
+                }
+            }
+        }
+        .table-data {
+            width: 100%;
+            .table-row {
+                display: flex;
+                height: 25px;
+                background: rgb(218, 218, 231);
+                &:nth-of-type(2n){
+                    background: #fff;
+                }
+                .table-column {
+                    border: 1px solid #440606;
+                    flex: 1;
+                    border-radius: 4px;
+                    padding-top: 4px;
+                }
+            }
+        }
+    }
+
+    .loading {
+        display: flex;
+        justify-content: center;
+        padding: 150px;
+        font-size: 32px;
+        font-weight: 800;
+        color: hsl(166deg 90% 18%);
+    }
+}

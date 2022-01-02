@@ -1,0 +1,40 @@
+.dynamic-div-wrapper {
+  // display: flex;
+  // flex-direction: column;
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+
+  // align-items: center;
+  .dynamic-div {
+    width: 200px;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #042c2d;
+    border-radius: 10px;
+    margin: 10px;
+    box-shadow: 0 4px 12px 9px rgb(71 181 140);
+    position: relative;
+    left: 45%;
+    transition: all 0.5s;
+    &:hover {
+      transform: scale(1.05);
+    }
+    .box-button {
+      width: 80px;
+      height: 30px;
+      border: none;
+      background: rgb(4, 170, 109);
+      border-radius: 6px;
+      color: #ffffff;
+      cursor: pointer;
+      transition: all 0.5s;
+      &:hover {
+        transform: scale(1.1);
+        box-shadow: 2px 4px 14px 5px rgb(30 122 86);
+      }
+    }
+  }
+}

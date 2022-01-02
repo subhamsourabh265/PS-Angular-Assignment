@@ -1,0 +1,48 @@
+<div class="timer-input-wrapper">
+  <div class="timer-input">
+    <div class="timer-field">
+      <label>{{ timerLabels.timerInputLabel }}</label>
+    </div>
+    <div class="timer-field">
+      <input
+        type="text"
+        class="timer-limit"
+        id="timerInput"
+        name="tmerInput"
+        [readOnly]="timerStatus"
+        [ngClass]="{ 'timer-input-disabled': timerStatus }"
+        [(ngModel)]="timerInput"
+      />
+    </div>
+  </div>
+  <div class="timer-input">
+    <div class="timer-field">
+      <label></label>
+    </div>
+    <div class="timer-field">
+      <input
+        type="button"
+        class="timer-button"
+        id="startBtn"
+        name="startBtn"
+        value="{{ timerLabels.startButtonTxt }}"
+        [disabled]="startButtonDisabled"
+        [ngClass]="{ 'start-disable': startButtonDisabled }"
+        (click)="timerInput > 0 ? startTimer() : ''"
+      />
+      <input
+        type="button"
+        class="timer-button"
+        id="resetBtn"
+        name="resetBtn"
+        value="{{ timerLabels.resetButtonTxt }}"
+        (click)="resetTimer()"
+      />
+    </div>
+  </div>
+  <div class="timer-paused-logs" *ngIf="showLogs">
+    <ng-container *ngFor="let item of logItems">
+      <div class="log-text">{{ timerLabels.pauseTxt }} &nbsp; {{ item }}</div>
+    </ng-container>
+  </div>
+</div>

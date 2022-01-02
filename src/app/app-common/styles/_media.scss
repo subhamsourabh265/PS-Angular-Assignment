@@ -1,0 +1,17 @@
+@mixin respond-to-phone{
+    @media screen and (max-width: 480px) and (min-width: 320px){
+        @content;
+    }
+}
+
+@mixin respond-to-tablet{
+    @media screen and (max-width: 768px){
+        @content;
+    }
+}
+
+@mixin respond-to-landscape{
+    @media screen and (max-width: 900px) and (min-width: 768px){
+        @content;
+    }
+}
