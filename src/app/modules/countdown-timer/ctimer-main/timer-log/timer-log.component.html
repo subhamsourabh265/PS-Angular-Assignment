@@ -1,7 +1,8 @@
 <div *ngIf="timeLogger && timeLogger.length" class="timelog-wrapper">
-    <ng-container *ngFor="let value of timeLogger">
-        <div class="time-stamp">
-            {{value.timerStatus}}&nbsp;at&nbsp;{{value.timeStamp}}
-        </div>
-    </ng-container>
+  <ng-container *ngFor="let value of timeLogger">
+    <div class="time-stamp">
+      {{ value.timerStatus }}&nbsp;at&nbsp;{{ value.timeStamp }}
+    </div>
+  </ng-container>
 </div>
+<div *ngIf="!(timeLogger && timeLogger.length)" class="timelog-wrapper"></div>

@@ -79,7 +79,8 @@
       background: #ffcbcb;
       box-shadow: 2px 2px 10px 2px #8657e0;
       @include respond-to-tablet() {
-        width: 98%;
+        width: 94%;
+        margin-left: 10px;
       }
       .product-name {
         height: 19px;
@@ -121,7 +122,7 @@
       background: #d4c1c1;
       box-shadow: -1px 3px 15px 5px #1de043;
       @include respond-to-tablet() {
-        width: 95%;
+        width: 94%;
       }
       .product-list-name {
         background: #9cdeb3;
