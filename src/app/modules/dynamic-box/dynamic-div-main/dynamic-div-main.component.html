@@ -7,7 +7,6 @@
   <ng-container
     *ngFor="let item of dynamicBoxes; index as i; trackBy: itemById"
   >
-    <!-- <ng-template #dynamic></ng-template> -->
     <div
       [@.disabled]="!isAnimate"
       class="dynamic-div"

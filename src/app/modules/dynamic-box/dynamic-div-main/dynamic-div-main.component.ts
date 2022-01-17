@@ -24,6 +24,7 @@ export class DynamicDivMainComponent implements OnInit, OnDestroy {
   dynamicBoxes: string[] = new Array(5).fill('box');
   @ViewChild('scrollDiv') scrollDiv: ElementRef | any;
   setScrollUpTimer: any;
+  scrollValue: any;
   constructor() {}
 
   ngOnInit(): void {
@@ -48,30 +49,22 @@ export class DynamicDivMainComponent implements OnInit, OnDestroy {
   }
 
   itemById(index: any, item: any) {
-    // console.log({item,index});
     return item;
   }
 
   onScroll() {
-    // clearTimeout(this.setScrollUpTimer);
+    this.scrollValue = {
+      top: this.scrollDiv?.nativeElement?.scrollTop,
+      height: this.scrollDiv?.nativeElement.scrollHeight,
+      offsetheight: this.scrollDiv?.nativeElement.offsetHeight,
+    };
     if (
       this.scrollDiv.nativeElement.scrollTop >=
       this.scrollDiv?.nativeElement.scrollHeight -
-        this.scrollDiv?.nativeElement.offsetHeight
+        this.scrollDiv?.nativeElement.offsetHeight -
+        1
     ) {
-      // this.isAnimate = true;
-      // this.setTimer = setTimeout(() => {
       this.dynamicBoxes.push('Box');
-      // clearTimeout(this.setTimer);
-      // this.setScrollUpTimer = setTimeout(() => {
-      //   // this.scrollDiv.nativeElement.scrollTop =
-      //   //   this.scrollDiv?.nativeElement.scrollHeight -
-      //   //   this.scrollDiv?.nativeElement.offsetHeight -
-      //   //   30;
-      //   clearTimeout(this.setScrollUpTimer);
-      // });
-      // console.log(this.scrollDiv.nativeElement.scrollTop);
-      // }, 10);
     }
   }
 
