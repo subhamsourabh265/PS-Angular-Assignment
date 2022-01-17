@@ -21,7 +21,7 @@ export class DynamicDivMainComponent implements OnInit, OnDestroy {
   setTimer: any;
   showAlert = false;
   clickedDiv: string = '';
-  dynamicBoxes: string[] = new Array(5).fill('box');
+  dynamicBoxes: string[] = new Array(10).fill('box');
   @ViewChild('scrollDiv') scrollDiv: ElementRef | any;
   setScrollUpTimer: any;
   scrollValue: any;
@@ -49,6 +49,7 @@ export class DynamicDivMainComponent implements OnInit, OnDestroy {
   }
 
   itemById(index: any, item: any) {
+    console.log(item);
     return item;
   }
 
@@ -64,7 +65,7 @@ export class DynamicDivMainComponent implements OnInit, OnDestroy {
         this.scrollDiv?.nativeElement.offsetHeight -
         1
     ) {
-      this.dynamicBoxes.push('Box');
+      this.dynamicBoxes.push(...new Array(10).fill('box'));
     }
   }
 
