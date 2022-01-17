@@ -17,10 +17,11 @@
     margin: 10px;
     box-shadow: 0 4px 12px 9px rgb(71 181 140);
     position: relative;
-    left: 45%;
+    left: 50%;
+    transform: translate(-50%);
     transition: all 0.5s;
     &:hover {
-      transform: scale(1.05);
+      transform: scale(1.05) translate(-48%);
     }
     .box-button {
       width: 80px;

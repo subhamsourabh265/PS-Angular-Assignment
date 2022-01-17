@@ -1,7 +1,7 @@
 import { trigger } from '@angular/animations';
 import { HttpClient } from '@angular/common/http';
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { forkJoin, lastValueFrom } from 'rxjs';
+import { forkJoin, lastValueFrom, map } from 'rxjs';
 import {
   bannerAnimation,
   bannerRotate,
@@ -26,6 +26,7 @@ export class FloatingBannerMainComponent implements OnInit, OnDestroy {
   constructor(private data: DataService) {}
 
   ngOnInit(): void {
+    this.state = 'large';
     this.bannerInterval = setInterval(() => {
       this.state = this.state == 'small' ? 'large' : 'small';
     }, 4100);
@@ -50,25 +51,32 @@ export class FloatingBannerMainComponent implements OnInit, OnDestroy {
       }
     });
 
-    this.data.getJsonData(url1).subscribe((posts) => {
-      if (posts) {
-        console.log(posts);
-        this.data.getJsonData(url2).subscribe((comments) => {
-          if (comments) {
-            const updatedPosts = posts?.body?.map((post: any) => {
-              const filteredComments = comments?.body?.filter(
-                (comment: any) => comment.postId == post.id
-              );
-              return {
-                ...post,
-                comments: filteredComments,
-              };
-            });
-            console.log(updatedPosts);
-          }
-        });
-      }
-    });
+    this.data
+      .getJsonData(url1)
+      .pipe(map((data: any) => data.body))
+      .subscribe((posts: any) => {
+        if (posts) {
+          console.log(posts);
+          this.data.getJsonData(url2).subscribe({
+            next: (comments) => {
+              if (comments) {
+                const updatedPosts = posts?.body?.map((post: any) => {
+                  const filteredComments = comments?.body?.filter(
+                    (comment: any) => comment.postId == post.id
+                  );
+                  return {
+                    ...post,
+                    comments: filteredComments,
+                  };
+                });
+                console.log(updatedPosts);
+              }
+            },
+            error: (err) => console.log(err),
+            complete: () => console.log('completed'),
+          });
+        }
+      });
 
     // fetch(url1)
     //   .then((res) => res.json())

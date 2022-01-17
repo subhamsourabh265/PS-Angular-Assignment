@@ -38,7 +38,7 @@ export const bannerRotate = [
     'large',
     style({
       opacity: '1',
-      transform: 'scale(4)',
+      transform: 'scale(2)',
     })
   ),
   transition('small => large', animate('4s 100ms ease-in')),

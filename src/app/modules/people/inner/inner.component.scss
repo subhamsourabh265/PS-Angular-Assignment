@@ -1,22 +1,21 @@
 .people {
-    font-size: 18px;
-    font-weight: 600;
-    border: 2px solid hsl(240deg 100% 50%);
-    border-radius: 7px;
-    padding: 5px;
-    .source {
-        color: green;
-        &.cache-call {
-            color: red;
-        }
+  font-weight: 600;
+  border: 2px solid hsl(240deg 100% 50%);
+  border-radius: 7px;
+  padding: 5px;
+  .source {
+    color: green;
+    &.cache-call {
+      color: red;
     }
+  }
 }
 
 .loading {
-    display: flex;
-    justify-content: center;
-    padding: 24px;
-    font-size: 24px;
-    font-weight: 800;
-    color: hsl(166deg 90% 18%);
+  display: flex;
+  justify-content: center;
+  padding: 24px;
+  font-size: 24px;
+  font-weight: 800;
+  color: hsl(166deg 90% 18%);
 }

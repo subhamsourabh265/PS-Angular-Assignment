@@ -16,14 +16,14 @@ export class InnerComponent implements OnInit {
   ngOnInit(): void {
     this.data
       .getApiData()
-      .pipe(
-        skipWhile((res: Object) => {
-          return Object.keys(res).length == 0;
-        })
-      )
+      // .pipe(
+      //   skipWhile((res: Object) => {
+      //     return Object.keys(res).length == 0;
+      //   })
+      // )
       // .pipe(skipWhile((res:any)=> !!res.data ))
       .subscribe((res: any) => {
-        this.apiData = res.data;
+        this.apiData = res;
         this.source = 'From Behavior Subject';
       });
   }

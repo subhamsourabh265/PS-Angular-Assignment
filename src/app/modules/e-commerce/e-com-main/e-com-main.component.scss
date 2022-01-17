@@ -1,3 +1,5 @@
+@import "../../../app-common/styles/media";
+
 .select-filter {
   display: flex;
   height: 30px;
@@ -15,6 +17,10 @@
       border-radius: 8px;
       cursor: pointer;
       transition: all 1s;
+      @include respond-to-tablet() {
+        width: 130px;
+        font-size: 12px;
+      }
       &:hover {
         transform: scale(1.1);
         box-shadow: 2px 2px 11px 2px #3b6a1c;
@@ -36,6 +42,11 @@
       font-size: 16px;
       font-weight: 600;
       transition: all 0.5s;
+      @include respond-to-tablet() {
+        width: 150px;
+        font-size: 12px;
+        margin-right: 0;
+      }
       &:hover {
         transform: scale(1.1);
         box-shadow: 2px 2px 11px 2px #6e7f85;
@@ -54,14 +65,22 @@
     height: 100%;
     display: flex;
     flex-wrap: wrap;
+    gap: 20px;
+    @include respond-to-tablet() {
+      flex-direction: column;
+      flex-wrap: nowrap;
+    }
     .product-details {
-      width: 295px;
-      height: 196px;
-      margin: 15px;
+      width: 47vw;
+      height: 240px;
+      // margin: 15px;
       border-radius: 10px;
       border: 2px solid #29198e;
       background: #ffcbcb;
       box-shadow: 2px 2px 10px 2px #8657e0;
+      @include respond-to-tablet() {
+        width: 98%;
+      }
       .product-name {
         height: 19px;
         padding: 70px 18px 50px 0;
@@ -88,8 +107,12 @@
     display: flex;
     flex-wrap: wrap;
     padding: 5px;
+    @include respond-to-tablet() {
+      flex-direction: column;
+      flex-wrap: nowrap;
+    }
     .product-list-details {
-      width: 47%;
+      width: 44vw;
       border: 2px solid #06a256;
       border-radius: 10px;
       height: 50px;
@@ -97,6 +120,9 @@
       margin: 16px;
       background: #d4c1c1;
       box-shadow: -1px 3px 15px 5px #1de043;
+      @include respond-to-tablet() {
+        width: 95%;
+      }
       .product-list-name {
         background: #9cdeb3;
         width: 50%;

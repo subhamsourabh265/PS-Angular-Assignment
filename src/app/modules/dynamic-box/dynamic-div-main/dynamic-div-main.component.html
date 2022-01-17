@@ -7,7 +7,13 @@
   <ng-container
     *ngFor="let item of dynamicBoxes; index as i; trackBy: itemById"
   >
-    <div [@.disabled]="!isAnimate" class="dynamic-div" [@pageLoadAnimation]>
+    <!-- <ng-template #dynamic></ng-template> -->
+    <div
+      [@.disabled]="!isAnimate"
+      class="dynamic-div"
+      [@pageLoadAnimation]
+      [id]="'box' + i + 1"
+    >
       <input
         type="button"
         id="div{{ i }}"

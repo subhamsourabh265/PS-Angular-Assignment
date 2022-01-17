@@ -1,41 +1,59 @@
+@import "../../../app-common/styles/_media";
+
 .ctimer-wrapper {
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  overflow: auto;
+  @include respond-to-tablet() {
+    flex-direction: column;
+    flex-wrap: nowrap;
+  }
+  .countdown-display {
+    width: 500px;
+    height: 200px;
+    border: 2px solid rosybrown;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 2px 2px rosybrown;
     display: flex;
-    flex-wrap: wrap;
-    overflow: auto;
-    .countdown-display {
-        width: 500px;
-        height: 200px;
-        border: 2px solid rosybrown;
-        margin: 10px;
-        border-radius: 10px;
-        box-shadow: 2px 2px 2px 2px rosybrown;
-        display: flex;
-        justify-content: center;
+    justify-content: center;
+    @include respond-to-tablet() {
+      width: 96%;
     }
-    .timer-input {
-        width: 800px;
-        height: 200px;
-        border: 2px solid rosybrown;
-        margin: 10px;
-        border-radius: 10px;
-        box-shadow: 2px 2px 2px 2px rosybrown;
+  }
+  .timer-input {
+    width: 800px;
+    height: 200px;
+    border: 2px solid rosybrown;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 2px 2px rosybrown;
+    @include respond-to-tablet() {
+      width: 96%;
     }
-    .timer-logs {
-        width: 500px;
-        height: 160px;
-        border: 2px solid rosybrown;
-        margin: 10px;
-        border-radius: 10px;
-        box-shadow: 2px 2px 2px 2px rosybrown;
+  }
+  .timer-logs {
+    width: 500px;
+    height: 160px;
+    border: 2px solid rosybrown;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 2px 2px rosybrown;
+    @include respond-to-tablet() {
+      width: 96%;
     }
-    .timer-counts {
-        width: 800px;
-        height: 160px;
-        border: 2px solid rosybrown;
-        margin: 10px;
-        border-radius: 10px;
-        box-shadow: 2px 2px 2px 2px rosybrown;
+  }
+  .timer-counts {
+    width: 800px;
+    height: 160px;
+    border: 2px solid rosybrown;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 2px 2px rosybrown;
+    @include respond-to-tablet() {
+      width: 96%;
     }
+  }
 }

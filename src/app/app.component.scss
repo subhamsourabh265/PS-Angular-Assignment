@@ -1,34 +1,34 @@
 .app-header {
-    position: fixed;
-    width: 100%;
-    top: 0;
-    left: 0;
-    z-index: 0;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 0;
 }
 .app-footer {
-    position: fixed;
-    width: 100%;
-    bottom: 0;
-    left: 0;
-    z-index: 0;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  z-index: 0;
 }
 .left-panel {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    z-index: 99;
-    &.left-panel-hide{
-        z-index: 1;
-        width: 20%;
-    }
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 99;
+  &.left-panel-hide {
+    z-index: 1;
+    width: 20%;
+  }
 }
 .main-content {
-    background: #eaeaea;
-    position: fixed;
-    left: 0;
-    right: 0;
-    top: 85px;
-    bottom: 66px;
-    text-align: center;
-    z-index: 55;
+  background: #eaeaea;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 70px;
+  bottom: 66px;
+  text-align: center;
+  z-index: 55;
 }

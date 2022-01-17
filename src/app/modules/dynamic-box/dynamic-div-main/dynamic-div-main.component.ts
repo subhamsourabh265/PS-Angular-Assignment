@@ -53,25 +53,25 @@ export class DynamicDivMainComponent implements OnInit, OnDestroy {
   }
 
   onScroll() {
-    clearTimeout(this.setScrollUpTimer);
+    // clearTimeout(this.setScrollUpTimer);
     if (
       this.scrollDiv.nativeElement.scrollTop >=
       this.scrollDiv?.nativeElement.scrollHeight -
         this.scrollDiv?.nativeElement.offsetHeight
     ) {
-      this.isAnimate = true;
-      this.setTimer = setTimeout(() => {
-        this.dynamicBoxes.push('Box');
-        clearTimeout(this.setTimer);
-        this.setScrollUpTimer = setTimeout(() => {
-          this.scrollDiv.nativeElement.scrollTop =
-            this.scrollDiv?.nativeElement.scrollHeight -
-            this.scrollDiv?.nativeElement.offsetHeight -
-            30;
-          clearTimeout(this.setScrollUpTimer);
-        });
-        console.log(this.scrollDiv.nativeElement.scrollTop);
-      }, 100);
+      // this.isAnimate = true;
+      // this.setTimer = setTimeout(() => {
+      this.dynamicBoxes.push('Box');
+      // clearTimeout(this.setTimer);
+      // this.setScrollUpTimer = setTimeout(() => {
+      //   // this.scrollDiv.nativeElement.scrollTop =
+      //   //   this.scrollDiv?.nativeElement.scrollHeight -
+      //   //   this.scrollDiv?.nativeElement.offsetHeight -
+      //   //   30;
+      //   clearTimeout(this.setScrollUpTimer);
+      // });
+      // console.log(this.scrollDiv.nativeElement.scrollTop);
+      // }, 10);
     }
   }
 

@@ -1,45 +1,63 @@
+@import "../../../app-common/styles/media";
+
 .ctimer-wrapper {
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  overflow: auto;
+  @include respond-to-tablet() {
+    flex-direction: column;
+    flex-wrap: nowrap;
+  }
+  .countdown-display {
+    width: 500px;
+    height: 200px;
+    border: 2px solid rosybrown;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 2px 2px #5d5458;
     display: flex;
-    flex-wrap: wrap;
-    overflow: auto;
-    .countdown-display {
-        width: 500px;
-        height: 200px;
-        border: 2px solid rosybrown;
-        margin: 10px;
-        border-radius: 10px;
-        box-shadow: 2px 2px 2px 2px #5d5458;
-        display: flex;
-        justify-content: center;
-        background: #eae1e5;
+    justify-content: center;
+    background: #eae1e5;
+    @include respond-to-tablet() {
+      width: 95%;
     }
-    .timer-input {
-        width: 800px;
-        height: 200px;
-        border: 2px solid rosybrown;
-        margin: 10px;
-        border-radius: 10px;
-        box-shadow: 2px 2px 2px 2px #5d5458;
-        background: #eae1e5;
+  }
+  .timer-input {
+    width: 800px;
+    height: 200px;
+    border: 2px solid rosybrown;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 2px 2px #5d5458;
+    background: #eae1e5;
+    @include respond-to-tablet() {
+      width: 95%;
     }
-    .timer-logs {
-        width: 500px;
-        height: 160px;
-        border: 2px solid rosybrown;
-        margin: 10px;
-        border-radius: 10px;
-        box-shadow: 2px 2px 2px 2px #5d5458;
-        background: #eae1e5;
+  }
+  .timer-logs {
+    width: 500px;
+    height: 160px;
+    border: 2px solid rosybrown;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 2px 2px #5d5458;
+    background: #eae1e5;
+    @include respond-to-tablet() {
+      width: 95%;
     }
-    .timer-counts {
-        width: 800px;
-        height: 160px;
-        border: 2px solid rosybrown;
-        margin: 10px;
-        border-radius: 10px;
-        box-shadow: 2px 2px 2px 2px #5d5458;
-        background: #eae1e5;
+  }
+  .timer-counts {
+    width: 800px;
+    height: 160px;
+    border: 2px solid rosybrown;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 2px 2px #5d5458;
+    background: #eae1e5;
+    @include respond-to-tablet() {
+      width: 95%;
     }
+  }
 }

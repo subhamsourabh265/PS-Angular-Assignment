@@ -4,6 +4,17 @@ import { StudentModel } from 'src/app/app-common/models';
 import { DataService } from 'src/app/app-common/services/data.service';
 import { FormBuilder, FormGroup, FormArray, Validators } from '@angular/forms';
 import { pageLoadAnimation } from 'src/app/app-common/animations';
+import {
+  concatMap,
+  debounceTime,
+  delay,
+  exhaustMap,
+  filter,
+  map,
+  mergeMap,
+  switchMap,
+} from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'ss-app-main',
@@ -24,7 +35,8 @@ export class MainComponent implements OnInit {
     private data: DataService,
     private route: ActivatedRoute,
     private router: Router,
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private http: HttpClient
   ) {}
 
   ngOnInit(): void {
@@ -42,6 +54,16 @@ export class MainComponent implements OnInit {
     } else {
       this.students.push(this.createStudent());
     }
+
+    this.students.valueChanges
+      .pipe(
+        map((data: any) => data[data.length - 1]['class']),
+        filter((data) => !!data && data.toString().length <= 2),
+        switchMap((data: any) =>
+          this.http.get(`https://jsonplaceholder.typicode.com/posts/${data}`)
+        )
+      )
+      .subscribe(console.log);
   }
 
   createStudent(data?: any): FormGroup {

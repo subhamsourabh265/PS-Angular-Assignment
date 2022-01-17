@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { delay } from 'rxjs/operators';
+import { delay, map } from 'rxjs/operators';
 import { pageLoadAnimation } from 'src/app/app-common/animations';
 import { PRICEFILTER } from 'src/app/app-common/app-settings.config';
 import { DataService } from 'src/app/app-common/services/data.service';
@@ -23,7 +23,7 @@ export class EComMainComponent implements OnInit {
   ngOnInit(): void {
     this.selectedFilter = 'select';
     this.data.getProductData().subscribe((res) => {
-      this.productSource = res.productDetails;
+      this.productSource = res;
     });
   }
 

@@ -1,15 +1,18 @@
+@import "../../../app-common/styles/media";
+
 .form-wrapper {
   height: 70%;
   overflow: auto;
   display: flex;
   justify-content: center;
-  // border: 1px solid hsl(120deg 100% 25%);
-  // border-radius: 6px;
-  // margin-left: 450px;
   .form-table {
     width: 60%;
     height: 50vh;
     overflow: auto;
+    @include respond-to-tablet() {
+      width: 90vw;
+      font-size: 14px;
+    }
     .row-heading {
       display: flex;
       &.row-heading-scroll {
@@ -24,7 +27,7 @@
         color: hsl(0deg 0% 100%);
         height: 25px;
         padding-top: 8px;
-        &:nth-of-type(2n+1) {
+        &:nth-of-type(2n + 1) {
           // border-radius: 12px 0 0 0;
           // background: rgb(214, 214, 221);
         }
@@ -38,7 +41,7 @@
       &.row-data-scroll {
         margin-top: 37px;
       }
-      &:nth-of-type(2n+1) {
+      &:nth-of-type(2n + 1) {
         background: hsl(240deg 10% 83%);
       }
       .col-data {
