@@ -1,0 +1,74 @@
+[debug] [2022-01-17T11:38:10.588Z] ----------------------------------------------------------------------
+[debug] [2022-01-17T11:38:10.589Z] Command:       /usr/local/bin/node /usr/local/bin/firebase deploy
+[debug] [2022-01-17T11:38:10.589Z] CLI Version:   10.0.1
+[debug] [2022-01-17T11:38:10.589Z] Platform:      darwin
+[debug] [2022-01-17T11:38:10.589Z] Node Version:  v14.17.6
+[debug] [2022-01-17T11:38:10.590Z] Time:          Mon Jan 17 2022 17:08:10 GMT+0530 (India Standard Time)
+[debug] [2022-01-17T11:38:10.590Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-01-17T11:38:10.636Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-01-17T11:38:10.636Z] > authorizing via signed-in user (sourabh.shubham120@gmail.com)
+[debug] [2022-01-17T11:38:10.636Z] [iam] checking project angularassignment-bdff5 for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2022-01-17T11:38:10.638Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/angularassignment-bdff5:testIamPermissions  
+ {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2022-01-17T11:38:12.908Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Mon, 17 Jan 2022 11:38:12 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","server-timing":"gfet4t7; dur=1369","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2022-01-17T11:38:12.911Z] > refreshing access token with scopes: []
+[debug] [2022-01-17T11:38:12.911Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2022-01-17T11:38:13.438Z] <<< HTTP RESPONSE 200 {"expires":"Mon, 01 Jan 1990 00:00:00 GMT","cache-control":"no-cache, no-store, max-age=0, must-revalidate","date":"Mon, 17 Jan 2022 11:38:13 GMT","pragma":"no-cache","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2022-01-17T11:38:13.490Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/angularassignment-bdff5 [none]
+[debug] [2022-01-17T11:38:14.156Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/angularassignment-bdff5 200
+[debug] [2022-01-17T11:38:14.156Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/angularassignment-bdff5 {"projectId":"angularassignment-bdff5","projectNumber":"273437775769","displayName":"angularAssignment","name":"projects/angularassignment-bdff5","resources":{"hostingSite":"angularassignment-bdff5"},"state":"ACTIVE"}
+[info] 
+[info] === Deploying to 'angularassignment-bdff5'...
+[info] 
+[info] i  deploying hosting 
+[debug] [2022-01-17T11:38:14.159Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2022-01-17T11:38:14.160Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2022-01-17T11:38:14.563Z] <<< HTTP RESPONSE 200 {"expires":"Mon, 01 Jan 1990 00:00:00 GMT","pragma":"no-cache","cache-control":"no-cache, no-store, max-age=0, must-revalidate","date":"Mon, 17 Jan 2022 11:38:14 GMT","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2022-01-17T11:38:14.611Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/angularassignment-bdff5/versions  
+ {"config":{"rewrites":[{"glob":"**","path":"/index.html"}]},"labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2022-01-17T11:38:16.948Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Mon, 17 Jan 2022 11:38:16 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[info] i  hosting[angularassignment-bdff5]: beginning deploy... 
+[info] i  hosting[angularassignment-bdff5]: found 33 files in dist/advancedTraining 
+[debug] [2022-01-17T11:38:16.965Z] > refreshing access token with scopes: []
+[debug] [2022-01-17T11:38:16.965Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2022-01-17T11:38:16.967Z] [hosting] hash cache [ZGlzdC9hZHZhbmNlZFRyYWluaW5n] stored for 33 files
+[debug] [2022-01-17T11:38:16.967Z] [hosting][hash queue][FINAL] {"max":2,"min":1,"avg":1,"active":0,"complete":33,"success":33,"errored":0,"retried":0,"total":33,"elapsed":4}
+[debug] [2022-01-17T11:38:17.364Z] <<< HTTP RESPONSE 200 {"pragma":"no-cache","date":"Mon, 17 Jan 2022 11:38:17 GMT","cache-control":"no-cache, no-store, max-age=0, must-revalidate","expires":"Mon, 01 Jan 1990 00:00:00 GMT","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2022-01-17T11:38:17.410Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/sites/angularassignment-bdff5/versions/6b2248045493c62f:populateFiles [none]
+[debug] [2022-01-17T11:38:17.410Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/sites/angularassignment-bdff5/versions/6b2248045493c62f:populateFiles {"files":{"/144.a4a72ad28dd4cc0d.js":"b6880a6a4366893804a5ba75060df8dc4519f3aa6534798d7dbc2f599d60681b","/217.d05c2d4a98a3dc60.js":"d69c5d722cfb964ed5f96a5f1b3d83ec253b7367dddf60372126153e6dd3fe8b","/296.c6c6e2c778663b6e.js":"ce89a37e9cfe9daa02824e3ba18e763c27960d50edd0cf2db5378860226f1f05","/301.99d75c57e59f3ed9.js":"b58635fcc95673ca101baf082279aa9cdf91e02099276e186d0aa7c17acc59ae","/342.221a9de0ae9b4116.js":"4e27d974ecbcf841ebfd1cded1db1a359309291120ef1d6704c2261b42ae675d","/3rdpartylicenses.txt":"2f70be62d14b64fe6c640e1997c33997290fc043f1311acac78a1fb481ac45ff","/447.1f5c0aace12b2346.js":"67ea8ee620099dc911a2404c2bda549b43513a824fd494fcc9dfda62ce8c8386","/475.e292d9fec78a9115.js":"c54afeb8c6c8332420545e6abeecce04ec87f49f47fe286d726f837ac3b9c8d2","/734.264642be654b16fa.js":"ccd926b24736d9a9374480974bf9ce9245d195469b4a9dec04613845e399047a","/favicon.ico":"a2aee5309d0b59b9b66384ccc3969a07fab1b320d0bf76f1b25047a051d7f774","/index.html":"88058d6d011cfd3c0088eb7858ffdf8441e959de96768f520c3ef649c48f3b9d","/main.ce4e5a8687ed74f6.js":"c917cd816df2c37736ef7f04ce82f76085d044d38c0b1b37935e361737aefa9a","/manifest.webmanifest":"702c7c315685202e6d11da55bfaab6ee720eda1b99fef8c761299132d0117311","/ngsw-worker.js":"c2f38657c47080131303c57dedf17795443c28da564e77999061e842151bc8bf","/ngsw.json":"0aaabfbb5eecc6061a27ce0557cdde5378cbbb5779d451e85bf971f0b99f3332","/polyfills.b9c8f0867a9e0a61.js":"5933b2a0649bc5d31e414ccf911100cc52ec1e5485ba75d380debde665155a8c","/runtime.20105ddeca81386f.js":"72d05ae76e4593e30c8d48c20001403803ecf5ce3129616f3cb05515e280f2a2","/safety-worker.js":"2f37df6ca6d3f621a16017eb30aefcb4294dd952dca0a730ec8ae8a879860e50","/styles.ef46db3751d8e999.css":"f1b651238a58fe290baec6c5e32f3bdb1943dd2bd582f02569231f7a757c7837","/worker-basic.min.js":"2f37df6ca6d3f621a16017eb30aefcb4294dd952dca0a730ec8ae8a879860e50","/assets/icons/icon-128x128.png":"82273be08042beb7d17c79cd3d8a4f91a1f7aba7c4fd9f35561acfa0f3d4e86f","/assets/icons/icon-144x144.png":"8ad379379a04d3a883f64c9d4b215ca51501f4352226d0323bff9cd9b8df18db","/assets/icons/icon-152x152.png":"0dda6f1fda72dac9973fa950a48fb51c6ca0c355f8d1a4e70782d812bda84648","/assets/icons/icon-192x192.png":"65605e98805d98129c99b096b03240cdc7f01fc1c52526319b5ab9269fc19557","/assets/icons/icon-384x384.png":"71b724fcc39f5359dcdd66e7f77d3f2d0cdc0988a9296928e90b400be33f725f","/assets/icons/icon-512x512.png":"2e94c56c7136de4159eedc061eb8c4c253f518c53bbe08716305297350823d01","/assets/icons/icon-72x72.png":"96f667025e6f928f6c84367eb30d795517583dcb620d72d81c1d946425ef4887","/assets/icons/icon-96x96.png":"695a124b4a11980d95e1539a3be0b3f823e59ac7d918085cdf85afdd3a4bb55b","/assets/mocks/fnc.js":"07f733996ab724456ee20d3d20ab484eb80e3f384fc6766ddbb54a34b6f46789","/assets/mocks/mock.js":"cc4773dfe8ff175b4673267811c1175d340faa56c4ba26276de4b67d1a5c7d3f","/assets/mocks/people.json":"291c85d78fec09e19a493308d391b70d14871f245af28a61a19db3e083191733","/assets/mocks/products.json":"ebdaf1867d7b27682d87ffbb1441fd1f4740aa18fffbc5d7a0db6750c2ac240f","/assets/mocks/studentMarks.json":"eba06bbd792d9c15711c751655a702ef0ee5bda66fda078e875095f64ab88f92"}}
+[debug] [2022-01-17T11:38:19.901Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/sites/angularassignment-bdff5/versions/6b2248045493c62f:populateFiles 200
+[debug] [2022-01-17T11:38:19.901Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/sites/angularassignment-bdff5/versions/6b2248045493c62f:populateFiles {"uploadUrl":"https://upload-firebasehosting.googleapis.com/upload/sites/angularassignment-bdff5/versions/6b2248045493c62f/files"}
+[debug] [2022-01-17T11:38:19.901Z] [hosting][populate queue][FINAL] {"max":2936,"min":2936,"avg":2936,"active":0,"complete":1,"success":1,"errored":0,"retried":0,"total":1,"elapsed":2936}
+[debug] [2022-01-17T11:38:19.902Z] [hosting] uploads queued: 0
+[debug] [2022-01-17T11:38:19.902Z] [hosting][upload queue][FINAL] {"max":0,"min":9999999999,"avg":0,"active":0,"complete":0,"success":0,"errored":0,"retried":0,"total":0,"elapsed":1642419499902}
+[info] ✔  hosting[angularassignment-bdff5]: file upload complete 
+[debug] [2022-01-17T11:38:19.902Z] [hosting] deploy completed after 2952ms
+[debug] [2022-01-17T11:38:19.905Z] [
+  {
+    "config": {
+      "public": "dist/advancedTraining",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ],
+      "site": "angularassignment-bdff5"
+    },
+    "site": "angularassignment-bdff5",
+    "version": "sites/angularassignment-bdff5/versions/6b2248045493c62f"
+  }
+]
+[info] i  hosting[angularassignment-bdff5]: finalizing version... 
+[debug] [2022-01-17T11:38:19.905Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2022-01-17T11:38:19.905Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
