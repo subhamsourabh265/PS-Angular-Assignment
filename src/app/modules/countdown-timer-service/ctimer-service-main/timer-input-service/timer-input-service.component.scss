@@ -1,43 +1,50 @@
+@import "../../../../app-common/styles/media";
 .timer-input-wrapper {
-    padding: 20px;
-    font-size: 22px;
-    font-weight: 600;
-    .timer-input {
-        display: flex;
-        margin: 14px;
-        .timer-field {
-            flex: 1;
-            .timer-limit {
-                width: 250px;
-                height: 18px;
-                border: 2px solid #b7a2a2;
-                border-radius: 5px;
-            }
-            .timer-button {
-                width: 100px;
-                height: 25px;
-                border: none;
-                background: #3310c1;
-                color: #fff;
-                border-radius: 6px;
-                margin-right: 8px;
-                cursor: pointer;
-            }
-        }
+  padding: 20px;
+  font-size: 22px;
+  font-weight: 600;
+  .timer-input {
+    display: flex;
+    margin: 14px;
+    .timer-field {
+      flex: 1;
+      .timer-limit {
+        width: 250px;
+        height: 18px;
+        border: 2px solid #b7a2a2;
+        border-radius: 5px;
+      }
+      .timer-button {
+        width: 100px;
+        height: 25px;
+        border: none;
+        background: #3310c1;
+        color: #fff;
+        border-radius: 6px;
+        margin-right: 8px;
+        cursor: pointer;
+      }
     }
-    .timer-paused-logs {
-        display: flex;
-        width: 200px;
-        border: 2px solid #c3b4b4;
-        padding: 10px;
-        border-radius: 4px;    
-        flex-direction: column;
-        align-items: flex-start;
-        margin-left: 112px;
-        font-size: 18px;
-        color: #a50b0b;
-        height: 70px;
-        overflow: auto;
-        margin-top: -20px;
-    }   
+  }
+  .timer-paused-logs {
+    display: flex;
+    width: 200px;
+    border: 2px solid #c3b4b4;
+    padding: 10px;
+    border-radius: 4px;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 112px;
+    font-size: 18px;
+    color: #a50b0b;
+    height: 70px;
+    overflow: auto;
+    margin-top: -20px;
+    @include respond-to-tablet() {
+      width: 180px;
+      margin-top: -85px;
+      margin-left: -18px;
+      height: 60px;
+    }
+  }
 }
